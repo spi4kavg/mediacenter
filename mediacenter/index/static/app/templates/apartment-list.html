@@ -1,0 +1,46 @@
+
+<div class="mdl-grid mdl-grid--no-spacing">
+    <form class="mdl-cell--4-col-tablet mdl-cell--6-col-desktop mdl-cell--3-offset-desktop mdl-cell--2-offset-tablet">
+        <a href="#!/new-apartment" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Добавить новый жилой комплекс</a>
+        <a href="#!/import/" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Импорт</a>
+
+
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow-2dp">
+            <tr>
+                <th>Наименование</th>
+                <th>Город</th>
+                <th>Адрес</th>
+                <th>Количество квартир</th>
+                <td>Опцци</td>
+            </tr>
+            <% _.each(collection, function (v) { %>
+                <tr>
+                    <td>
+                        <a href="#!/edit/<%= v.get('id') %>" title="Редактировать">
+                            <%= v.get('name') %>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#!/edit/<%= v.get('id') %>" title="Редактировать">
+                            <%= v.get('city') %>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#!/edit/<%= v.get('id') %>" title="Редактировать">
+                            <%= [v.get('street'), v.get('house'), v.get('structure')].filter(function (e) {return !!e}).join(", ") %>
+                        </a>
+                    </td>
+                    <td><%= v.get('count') %></td>
+                    <td>
+                        <a href="#!/import/<%= v.get('id') %>" title="Загрузить excel">
+                            <i class="material-icons">file_upload</i>
+                        </a>
+                        <a href="#" class="download" data-cid="<%= v.get('id') %>" title="Скачать xml">
+                            <i class="material-icons" data-cid="<%= v.get('id') %>">file_download</i>
+                        </a>
+                    </td>
+                </tr>
+            <% }); %>
+        </table>
+    </form>
+</div>

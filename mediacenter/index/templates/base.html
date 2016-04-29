@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block css %}{% endblock %}
+    </head>
+    <body>
+        <div id="site-content">
+            {% block content %}{% endblock %}
+        </div>
+        <script src="{% static 'vendor/require.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'vendor/app.js' %}" type="text/javascript"></script>
+        <script type="text/javascript">
+            require(["app"]);
+        </script>
+    </body>
+</html>

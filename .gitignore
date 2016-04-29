@@ -1,0 +1,3 @@
+*.pyc
+venv/
+mediacenter/db.sqlite3

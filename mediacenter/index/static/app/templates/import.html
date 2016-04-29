@@ -1,0 +1,27 @@
+<div class="mdl-grid mdl-grid--no-spacing">
+    <form class="mdl-cell--4-col-tablet mdl-cell--3-col-desktop mdl-cell--4-offset-desktop mdl-cell--2-offset-tablet" enctype="multipart/form-data">
+        <% if (collection) { %>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <select name="pk">
+                    <% _.each(collection, function (v) { %>
+                        <option value="<%= v.get('id') %>"><%= v.get('name') %></option>
+                    <% }); %>
+                </select>
+            </div>
+        <% } else { %>
+            <input type="hidden" name="pk" value="<%= pk %>" />
+        <% } %>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="file" id="file" name="file" />
+        </div>
+
+        <input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" value="Загрузить" />
+        <a href="#!/" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">Назад</a>
+
+    </form>
+</div>
+
+<div id="uploading-result-snackback" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
+</div>

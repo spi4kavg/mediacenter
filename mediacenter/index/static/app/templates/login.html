@@ -1,0 +1,22 @@
+<div class="mdl-grid mdl-grid--no-spacing">
+    <form class="mdl-cell--4-col-tablet mdl-cell--3-col-desktop mdl-cell--4-offset-desktop mdl-cell--2-offset-tablet">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="login" name="login" pattern="?[0-9a-zA-Zа-яА-Я]+?" />
+            <label class="mdl-textfield__label" for="login">Login</label>
+            <span class="mdl-textfield__error">Login is incorrect format. It must be 0-9 or/and a-z.</span>
+        </div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="password" id="password" name="password" pattern="?[0-9a-zA-Zа-яА-Я]+?" />
+            <label class="mdl-textfield__label" for="password">Password</label>
+            <span class="mdl-textfield__error">Password is incorrect format. It must be 0-9 or/and a-z.</span>
+        </div>
+
+        <input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" value="Войти" />
+    </form>
+</div>
+
+<div id="login-error-snackbar" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
+</div>
