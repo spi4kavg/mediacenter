@@ -24,6 +24,7 @@ class LoginAPIView(APIView):
             "errors": serializer.errors
         })
 
+
 @api_view(['DELETE'])
 def logout(request):
     del request.session["logged_in"]

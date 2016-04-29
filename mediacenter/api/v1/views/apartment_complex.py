@@ -31,7 +31,6 @@ class ApartmentComplexDetail(generics.RetrieveUpdateAPIView):
     queryset = ApartmentComplex.objects.all()
 
 
-
 @api_view(['POST'])
 def file_import(request, pk):
     """ import excel file """
@@ -90,13 +89,13 @@ def file_export(request, pk):
         offer = ET.SubElement(root, "offer", attrib={
             "internal-id": unicode(ap_comp.pk)
         })
-        
+
         type_ = ET.SubElement(offer, "type")
         type_.text = u"продажа"
-        
+
         type_ = ET.SubElement(offer, "type")
         type_.text = u"продажа"
-        
+
         property_type = ET.SubElement(offer, "property_type")
         property_type.text = u"жилая"
 

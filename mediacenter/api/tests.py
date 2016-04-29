@@ -25,7 +25,7 @@ class LoginTestCase(TestCase):
 
         self.assertIn("login", content['errors'].keys())
         self.assertIn("password", content['errors'])
-        
+
         error_msg = "This field may not be blank."
         self.assertEqual([error_msg], content["errors"]["login"])
         error_msg = "This field may not be blank."
@@ -89,7 +89,7 @@ class ApartmentComplexList(TestCase):
         s.save()
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 200)
-        
+
         response = self.client.post(self.url)
         self.assertEqual(response.status_code, 200)
 
